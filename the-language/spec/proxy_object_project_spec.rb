@@ -12,9 +12,27 @@
 class Proxy
   def initialize(target_object)
     @object = target_object
-    # ADD MORE CODE HERE
+    @messages = []
+    @tally = Hash.new(0)
   end
-  # WRITE CODE HERE
+  def method_missing(method_name, *args, &block)
+    @messages << method_name
+    @tally[method_name] += 1
+    return @object.__send__(method_name) if args.length == 0
+    @object.__send__(method_name, *args).class
+  end
+  def respond_to?(method_name, include_private=false)
+    @object.respond_to?(method_name) ? true : false
+  end
+  def messages 
+    @messages
+  end
+  def called?(method_name)
+    @messages.include?(method_name) ? true : false
+  end
+  def number_of_times_called(method_name)
+    @tally[method_name]
+  end
 end
 
 RSpec.describe "the proxy object" do

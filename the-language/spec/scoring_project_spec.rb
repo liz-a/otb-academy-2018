@@ -29,9 +29,25 @@
 
 def score(dice)
   # You need to write this method
+  return 0 if dice.size == 0
+
+  dice.each_with_index.inject(0) do |total, (current_val, index)|
+    bonus = { 1 => 700, 2 => 200, 3 => 300, 4 => 400, 5 => 350, 6 => 600 }
+    total += 100 if current_val == 1  
+    total += 50 if current_val == 5 
+    if index == dice.size - 1
+      dice.uniq.each do |n|
+        if(dice.count(n) >= 3)
+        total += bonus[n]
+        end
+      end
+    end
+    total
+  end
+
 end
 
-RSpec.describe "scorign a game of greed" do
+RSpec.describe "scoring a game of greed" do
   it "scores an empty list as 0" do
     expect( score([]) ).to eq( 0 )
   end

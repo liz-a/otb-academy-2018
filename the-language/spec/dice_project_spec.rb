@@ -1,9 +1,17 @@
 # Implement a DiceSet Class here:
-#
-# class DiceSet
-#   code ...
-# end
-#
+
+class DiceSet
+  attr_accessor :values
+  @values = []
+  def roll(n)
+    result = []
+    n.times do
+      result << 1 + rand(6)
+    end
+    @values = result
+  end
+end
+
 
 RSpec.describe "dice set" do
   it "can create a new sice set" do
