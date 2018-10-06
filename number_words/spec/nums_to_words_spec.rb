@@ -44,5 +44,22 @@ RSpec.describe "nums_to_words" do
             expect( nums_to_words(88)).to eq ( "eighty-eight")
             expect( nums_to_words(99)).to eq ( "ninety-nine")
         end
+        it "returns 'one hundred' for the number 100" do
+            expect( nums_to_words(100)).to eq ( "one hundred")
+        end
+        it "returns 'one hundred and one' for number 101" do
+            expect( nums_to_words(101)).to eq ( "one hundred and one")
+        end
+        it "returns correct words for numbers between 102-999" do
+            expect( nums_to_words(111)).to eq ( "one hundred and eleven")
+            expect( nums_to_words(222)).to eq ( "two hundred and twenty-two")
+            expect( nums_to_words(333)).to eq ( "three hundred and thirty-three")
+            expect( nums_to_words(444)).to eq ( "four hundred and forty-four")
+            expect( nums_to_words(555)).to eq ( "five hundred and fifty-five")
+            expect( nums_to_words(666)).to eq ( "six hundred and sixty-six")
+            expect( nums_to_words(777)).to eq ( "seven hundred and seventy-seven")
+            expect( nums_to_words(888)).to eq ( "eight hundred and eighty-eight")
+            expect( nums_to_words(999)).to eq ( "nine hundred and ninety-nine")
+        end
     end
 end
