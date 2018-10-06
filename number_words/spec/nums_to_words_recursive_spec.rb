@@ -2,6 +2,9 @@ require "nums_to_words_recursive"
 
 RSpec.describe "nums_to_words_recursive" do
     context "converts numbers into words" do 
+        it "returns word 'zero' for number 0" do
+            expect( nums_to_words_recursive(0) ).to eq( "zero" )
+        end
         it "returns word 'one' for number 1" do
             expect( nums_to_words_recursive(1) ).to eq( "one" )
         end
