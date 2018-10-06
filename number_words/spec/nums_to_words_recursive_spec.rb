@@ -68,13 +68,21 @@ RSpec.describe "nums_to_words_recursive" do
             expect( nums_to_words_recursive(5172)).to eq ( "five thousand, one hundred and seventy-two")
             expect( nums_to_words_recursive(20772)).to eq ( "twenty thousand, seven hundred and seventy-two")
         end
-        it "returns the correct words for numbers under one billion" do
+        it "returns the correct words for numbers above 1000000" do
             expect( nums_to_words_recursive(1000000)).to eq ( "one million")
             expect( nums_to_words_recursive(5002101)).to eq ( "five million, two thousand, one hundred and one")
             expect( nums_to_words_recursive(8030111)).to eq ( "eight million, thirty thousand, one hundred and eleven")
             expect( nums_to_words_recursive(9005172)).to eq ( "nine million, five thousand, one hundred and seventy-two")
             expect( nums_to_words_recursive(40020772)).to eq ( "forty million, twenty thousand, seven hundred and seventy-two")
             expect( nums_to_words_recursive(999999999)).to eq ( "nine hundred and ninety-nine million, nine hundred and ninety-nine thousand, nine hundred and ninety-nine")
+        end
+        it "returns the correct words for numbers above one billion" do
+            expect( nums_to_words_recursive(1000000000)).to eq ( "one billion")
+            expect( nums_to_words_recursive(2005002101)).to eq ( "two billion, five million, two thousand, one hundred and one")
+            expect( nums_to_words_recursive(3008030111)).to eq ( "three billion, eight million, thirty thousand, one hundred and eleven")
+            expect( nums_to_words_recursive(7009005172)).to eq ( "seven billion, nine million, five thousand, one hundred and seventy-two")
+            expect( nums_to_words_recursive(8040020772)).to eq ( "eight billion, forty million, twenty thousand, seven hundred and seventy-two")
+            expect( nums_to_words_recursive(999999999999)).to eq ( "nine hundred and ninety-nine billion, nine hundred and ninety-nine million, nine hundred and ninety-nine thousand, nine hundred and ninety-nine")
         end
     end
 end
