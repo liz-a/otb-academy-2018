@@ -5,5 +5,18 @@ RSpec.describe "nums_to_words" do
         it "returns word 'zero' for number 0" do
             expect( nums_to_words(0) ).to eq( "zero" )
         end
+        it "returns word 'one' for number 1" do
+            expect( nums_to_words(1) ).to eq( "one" )
+        end
+        it "returns correct words for numbers 1-9" do
+            expect( nums_to_words(2) ).to eq( "two" )
+            expect( nums_to_words(3) ).to eq( "three" )
+            expect( nums_to_words(4) ).to eq( "four" )
+            expect( nums_to_words(5) ).to eq( "five" )
+            expect( nums_to_words(6) ).to eq( "six" )
+            expect( nums_to_words(7) ).to eq( "seven" )
+            expect( nums_to_words(8) ).to eq( "eight" )
+            expect( nums_to_words(9) ).to eq( "nine" )
+        end
     end
 end
