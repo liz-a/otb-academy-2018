@@ -20,6 +20,12 @@ def nums_to_words(n)
         return num % 1000 == 0 ? "#{get_hundreds(num/1000)} thousand" : "#{get_hundreds(num/1000)} thousand, #{get_hundreds(num%1000)}"
     end
 
-    get_thousands(n)
-    
+    return get_thousands(n) if n < 1000000
+
+    def get_millions(num)
+        return num % 1000000 == 0 ? "#{get_thousands(num/1000000)} million" : "#{get_thousands(num/1000000)} million, #{get_thousands(num%1000000)}"
+    end
+
+    get_millions(n)
+
 end

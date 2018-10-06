@@ -68,5 +68,13 @@ RSpec.describe "nums_to_words" do
             expect( nums_to_words(5172)).to eq ( "five thousand, one hundred and seventy-two")
             expect( nums_to_words(20772)).to eq ( "twenty thousand, seven hundred and seventy-two")
         end
+        it "returns the correct words for numbers under one billion" do
+            expect( nums_to_words(1000000)).to eq ( "one million")
+            expect( nums_to_words(5002101)).to eq ( "five million, two thousand, one hundred and one")
+            expect( nums_to_words(8030111)).to eq ( "eight million, thirty thousand, one hundred and eleven")
+            expect( nums_to_words(9005172)).to eq ( "nine million, five thousand, one hundred and seventy-two")
+            expect( nums_to_words(40020772)).to eq ( "forty million, twenty thousand, seven hundred and seventy-two")
+            expect( nums_to_words(999999999)).to eq ( "nine hundred and ninety-nine million, nine hundred and ninety-nine thousand, nine hundred and ninety-nine")
+        end
     end
 end
