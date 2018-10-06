@@ -31,5 +31,18 @@ RSpec.describe "nums_to_words" do
             expect( nums_to_words(19) ).to eq( "nineteen" )
             expect( nums_to_words(20) ).to eq( "twenty" )
         end
+        it "returns 'twenty-one' for the number 21" do
+            expect( nums_to_words(21)).to eq ( "twenty-one")
+        end
+        it "returns correct word for numbers under 100" do
+            expect( nums_to_words(22)).to eq ( "twenty-two")
+            expect( nums_to_words(33)).to eq ( "thirty-three")
+            expect( nums_to_words(44)).to eq ( "forty-four")
+            expect( nums_to_words(55)).to eq ( "fifty-five")
+            expect( nums_to_words(66)).to eq ( "sixty-six")
+            expect( nums_to_words(77)).to eq ( "seventy-seven")
+            expect( nums_to_words(88)).to eq ( "eighty-eight")
+            expect( nums_to_words(99)).to eq ( "ninety-nine")
+        end
     end
 end
