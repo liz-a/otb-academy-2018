@@ -13,6 +13,13 @@ def nums_to_words(n)
         return num % 100 == 0 ? "#{get_0_to_99(num/100)} hundred" : "#{get_0_to_99(num/100)} hundred and #{get_0_to_99(num%100)}"
     end
 
-    get_hundreds(n)
+    return get_hundreds(n) if n < 1000
 
+    def get_thousands(num)
+        return get_hundreds(num) if num < 1000
+        return num % 1000 == 0 ? "#{get_hundreds(num/1000)} thousand" : "#{get_hundreds(num/1000)} thousand, #{get_hundreds(num%1000)}"
+    end
+
+    get_thousands(n)
+    
 end
