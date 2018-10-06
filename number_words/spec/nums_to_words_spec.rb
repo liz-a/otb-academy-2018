@@ -18,5 +18,18 @@ RSpec.describe "nums_to_words" do
             expect( nums_to_words(8) ).to eq( "eight" )
             expect( nums_to_words(9) ).to eq( "nine" )
         end
+        it "returns correct word for numbers between 10-20" do
+            expect( nums_to_words(10) ).to eq( "ten" )
+            expect( nums_to_words(11) ).to eq( "eleven" )
+            expect( nums_to_words(12) ).to eq( "twelve" )
+            expect( nums_to_words(13) ).to eq( "thirteen" )
+            expect( nums_to_words(14) ).to eq( "fourteen" )
+            expect( nums_to_words(15) ).to eq( "fifteen" )
+            expect( nums_to_words(16) ).to eq( "sixteen" )
+            expect( nums_to_words(17) ).to eq( "seventeen" )
+            expect( nums_to_words(18) ).to eq( "eighteen" )
+            expect( nums_to_words(19) ).to eq( "nineteen" )
+            expect( nums_to_words(20) ).to eq( "twenty" )
+        end
     end
 end
