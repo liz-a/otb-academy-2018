@@ -69,6 +69,14 @@ VERSES
     expect( song.verses(2, 0) ).to eq( expected )
   end
 
+  it "replaces '6 bottles of beer' with '1 sixpack of beer'" do
+    expected = <<~VERSE
+    1 sixpack of beer on the wall, 1 sixpack of beer.
+    Take one down and pass it around, 5 bottles of beer on the wall.
+    VERSE
+    expect(song.verse(6)).to eq( expected )
+  end
+
   it "can sing the whole song" do
     expected = <<-SONG
 99 bottles of beer on the wall, 99 bottles of beer.
@@ -348,9 +356,9 @@ Take one down and pass it around, 8 bottles of beer on the wall.
 Take one down and pass it around, 7 bottles of beer on the wall.
 
 7 bottles of beer on the wall, 7 bottles of beer.
-Take one down and pass it around, 6 bottles of beer on the wall.
+Take one down and pass it around, 1 sixpack of beer on the wall.
 
-6 bottles of beer on the wall, 6 bottles of beer.
+1 sixpack of beer on the wall, 1 sixpack of beer.
 Take one down and pass it around, 5 bottles of beer on the wall.
 
 5 bottles of beer on the wall, 5 bottles of beer.

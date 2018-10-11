@@ -20,6 +20,8 @@ class Bottles
                 BottleZero.new(n)
             when 1
                 BottleOne.new(n)
+            when 6
+                BottleSix.new(n)
             else
                 BottleNumber.new(n)
             end
@@ -64,6 +66,14 @@ class Bottles
         end
         def describe
             "it"
+        end
+    end
+    class BottleSix < BottleNumber
+        def amount
+            1
+        end
+        def container
+            "sixpack"
         end
     end
 end
